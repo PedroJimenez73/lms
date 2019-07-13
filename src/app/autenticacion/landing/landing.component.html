@@ -1,0 +1,101 @@
+<div class="landing" *ngIf="!isLogged">
+    <app-login *ngIf="login" class="auth">
+        <!-- <p>¿No dispone de cuenta? Pulse <b (click)="toggleAuth()">aquí</b>.</p> -->
+    </app-login>
+    <app-signin *ngIf="!login" class="auth">
+        <p>¿Ya dispone de cuenta? Pulse <b (click)="toggleAuth()">aquí</b>.</p>
+    </app-signin>
+    <div class="front">
+        <div class="fila centrada rrss">
+            <img src="assets/facebook.svg">
+            <img src="assets/twitter.svg">
+            <img src="assets/whatsapp.svg">
+        </div>
+        <div class="mini-footer">
+            <span>&copy; 2019 ELERNIAM E-LEARNING SOLUTIONS</span>
+            <span>Aviso Legal | Contacto</span>
+        </div>
+    </div>
+</div>
+<div class="background" *ngIf="isLogged">
+    <div class="friso-fondo">
+        <div class="friso">
+            <div>
+                <h1>Inicio</h1>
+                <div class="breadcrumb">
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+            <div class="message success" *ngIf="welcomeMessage">
+                <img src="assets/check-circle.svg">
+                ¡Bienvenid@ de nuevo {{nombre}}!
+            </div>
+        </div>
+    </div>
+    <div class="contenedor grid">
+        <div class="card">
+            <header class="fila space">
+                <h2>Cursos</h2>
+            </header>
+            <hr>
+            <img src="assets/ui-design.svg" class="icon-big">
+            <footer class="fila derecha">
+                <button routerLink="/cursos">Acceder</button>
+            </footer>
+        </div>
+        <div class="card">
+            <header class="fila space">
+                <h2>Foros</h2>
+            </header>
+            <hr>
+            <img src="assets/network.svg" class="icon-big">
+            <footer class="fila derecha">
+                <button (click)="toggleOverlay()">Acceder</button>
+            </footer>
+        </div>
+        <div class="card">
+            <header class="fila space">
+                <h2>Repositorio</h2>
+            </header>
+            <hr>
+            <img src="assets/file-text.svg" class="icon-big">
+            <footer class="fila derecha">
+                <button (click)="toggleOverlay()">Acceder</button>
+            </footer>
+        </div>
+        <div class="card">
+            <header class="fila space">
+                <h2>Mi perfil</h2>
+            </header>
+            <hr>
+            <img src="assets/resume.svg" class="icon-big">
+            <footer class="fila derecha">
+                <button (click)="toggleOverlay()">Acceder</button>
+            </footer>
+        </div>
+        <div class="card">
+            <header class="fila space">
+                <h2>Ayuda y soporte</h2>
+            </header>
+            <hr>
+            <img src="assets/conversation.svg" class="icon-big">
+            <footer class="fila derecha">
+                <button (click)="toggleOverlay()">Acceder</button>
+            </footer>
+        </div>
+    </div>
+</div>
+<div class="overlay" (click)="toggleOverlay()" *ngIf="showOverlay">
+    <div class="card">
+        <header class="fila space">
+            <img src="assets/alert-triangle.svg">
+            <img src="assets/x.svg">
+        </header>
+        <hr>
+        <h2>&nbsp;</h2>
+        <h2>La funcionalidad no está habilitada, por favor contacte con el administrador.</h2>
+        <footer class="fila derecha">
+            <button>Aceptar</button>
+        </footer>
+    </div>
+</div>

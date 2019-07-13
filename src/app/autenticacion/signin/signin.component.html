@@ -1,0 +1,34 @@
+
+<form [formGroup]="registroForm" (ngSubmit)="registroUsuario()">
+    <div class="fila centrada">
+        <div class="logo">
+            <span>LMS</span> <span>&nbsp;Solution</span>
+        </div>
+    </div>
+    <div class="columna">
+        <input class="user" type="text" placeholder="Nombre y apellidos" formControlName="nombre" #nombre>
+    </div>
+    <div class="columna">
+        <input class="email" type="email" placeholder="Correo electrónico" formControlName="email">
+    </div>
+    <div class="columna">
+        <input class="password" type="password" placeholder="Contraseña" formControlName="password">
+    </div>
+    <div class="columna">
+        <input class="password" type="password" placeholder="Repita la contraseña" formControlName="confirm">
+    </div>
+    <div class="fila space">
+        <p>Acepto los <b>términos y condiciones</b></p>
+        <button type="submit" [disabled]="registroForm.invalid || registroForm.value.password != registroForm.value.confirm">Crear cuenta</button>
+    </div>
+    <div class="fila centrada">
+        <div class="message danger">
+            <img src="assets/alert-triangle.svg">
+            {{validacion}}
+        </div>
+    </div>
+</form>
+<div class="fila centrada">
+    <ng-content></ng-content>
+</div>
+    

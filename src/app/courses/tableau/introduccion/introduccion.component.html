@@ -1,0 +1,35 @@
+<div class="background">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="contenedor">
+        <div class="card jumbo" #lessons>
+            <h2><span>1</span> Introducción a Tableau Software</h2>
+            <hr>
+            <div class="lesson">
+                <h3>1.1 ¿Qué es Tableau Software?</h3>
+                <img class="float-right"src="assets/tableu-devices.png">
+                <p>Imagine que es un empleado de una gran cadena de comercios al por menor. Su jefa acaba de recibir el informe de ventas trimestral y ha observado que las ventas parecen ir mejor solo en algunos productos y las ganancias en ciertas áreas no van tan bien como se esperaba. Su jefa está interesada en los resultados: su trabajo es analizar el total de ventas y la rentabilidad para ver si puede determinar lo que impulsa estos números.</p>
+                <p>Le ha pedido que identifique áreas de mejora y que presente sus hallazgos al equipo. El equipo puede explorar los resultados y tomar medidas para mejorar las ventas y la rentabilidad de las líneas de productos de la empresa.</p>
+                <p>Usará Tableau Desktop para crear una vista sencilla de los datos de producto, asignar ventas de producto y rentabilidad por región, crear un dashboard de sus hallazgos y, a continuación, crear una historia para presentarla. Después, compartirá sus hallazgos en la web para que los miembros remotos del equipo puedan echarles un vistazo.</p>
+            </div>
+            <div class="lesson">
+                <h3>1.2 Instalación</h3>
+                <div class="contenedor-video">
+                    <video src="https://tableulms.s3-eu-west-1.amazonaws.com/Videotutorial01.mp4" controls></video>
+                    <div class="descripcion-video">
+                        <p>En este video se describe como instalar Tableau Software en un equipo con sistema operativo Windows. </p>
+                        <p class="duracion"><img src="assets/watch.svg"> <span> 16 min</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="fila space">
+                <button class="inline" routerLink="/cursos/tableau">Volver al índice</button>
+                <button class="inline">Pregunta</button>
+                <div>
+                    <button *ngIf="count !== 0" (click)="navToLesson(-1)">Anterior</button>
+                    <button *ngIf="count !== (lecciones.length - 1)" (click)="navToLesson(+1)">Siguiente</button>
+                    <button *ngIf="count === (lecciones.length - 1)" routerLink="/cursos/tableau">Finalizar</button>
+                </div>
+            </div>
+        </div>
+    </div>        
+</div>

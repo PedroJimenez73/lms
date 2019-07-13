@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // urlLogin: 'http://localhost:443/login',
+  // urlUsuario: 'http://localhost:443/usuario',
+  urlLogin: 'https://tranquil-capitol-reef-26816.herokuapp.com:443/login',
+  urlUsuario: 'https://tranquil-capitol-reef-26816.herokuapp.com/usuario',
 };
 
 /*
