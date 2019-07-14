@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { PortadaTableuComponent } from './portada-tableu/portada-tableu.component';
 import { IntroduccionComponent } from './tableau/introduccion/introduccion.component';
 import { ScormLessonComponent } from './tableau/scorm-lesson/scorm-lesson.component';
+import { CommonsModule } from '../commons/commons.module';
 
 const routes: Routes = [
   {path: '', data: {titulo: 'Cursos', breadcrumb: false}, component: HomeComponent},
@@ -17,10 +18,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, BreadcrumbComponent, PortadaTableuComponent, IntroduccionComponent, ScormLessonComponent],
+  declarations: [
+    HomeComponent, 
+    PortadaTableuComponent, 
+    IntroduccionComponent, 
+    ScormLessonComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    CommonsModule
   ]
 })
 export class CoursesModule { }

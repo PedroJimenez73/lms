@@ -2,12 +2,11 @@ button {
     background-color: $azul;
     border-radius: 4px;
     border: 1px solid $azul;
-    font-size: 16px;
+    font-size: 1em;
     font-family: $fuente;
     color: #ffffff;
     box-shadow: 0 4px 16px 0 rgba(88,103,221,.15);
-    padding: 12px 20px;
-    margin: 0 10px;
+    padding: 0.5em 1em;
     transition: all 400ms ease-in-out;
 
     &:hover {

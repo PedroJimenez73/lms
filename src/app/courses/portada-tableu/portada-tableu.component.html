@@ -1,19 +1,19 @@
-<div class="background">
-    <app-breadcrumb></app-breadcrumb>
-    <div class="contenedor">
+<div class="contenedor fondo-gris">
+        <app-friso></app-friso>
+        <div class="contenido para-friso flex">
         <div class="card list">
             <header>
                 <h2>Unidades</h2>
             </header>
             <hr>
-            <div class="fila space check" routerLink="/cursos/tableau/tableau-introduccion">
+            <div class="fila space check" (click)="loadScorm();">
                 <div>
                     <span>1</span> Introducción a Tableau Software
                 </div>
                 <img src="../../../assets/check-circle-big.svg">
             </div>
             <hr>
-            <div class="fila space" (click)="loadScorm();">
+            <div class="fila space">
                 <div>
                     <span>2</span> Instalación de Tableau y conexión a fuentes de datos
                 </div>
@@ -67,6 +67,37 @@
                 <h2>Seguimiento</h2>
             </header>
             <hr>
+            <div class="fila derecha">
+                    <span>Progreso</span>
+                    <span class="badge warning m-l-1em"> <img src="assets/trending-up.svg" alt=""> &nbsp; 12%</span>
+            </div>
+            <hr>
+            <div class="fila derecha">
+                    <span>Última sesión</span>
+                    <span class="badge success m-l-1em"> <img src="assets/watch-mini.svg" alt=""> &nbsp; 00h 02m</span>
+            </div>
+            <div class="fila derecha">
+                    <span>Total tiempo</span>
+                    <span class="badge success m-l-1em"> <img src="assets/watch-mini.svg" alt=""> &nbsp; 00h 43m</span>
+            </div>
+            <hr>
+            <div class="fila derecha">
+                    <span>Fecha inicio</span>
+                    <span class="badge info m-l-1em"> <img src="assets/calendar.svg" alt=""> &nbsp; 01/07/19</span>
+            </div>
+            <div class="fila derecha">
+                    <span>Fecha finalización</span>
+                    <span class="badge info m-l-1em"> <img src="assets/calendar.svg" alt=""> &nbsp; 30/10/19</span>
+            </div>
+            <hr>
+            <div class="fila derecha">
+                    <span>Evaluación intermedia</span>
+                    <span class="badge info m-l-1em"> <img src="assets/file-text-mini.svg" alt=""> &nbsp; Pte.</span>
+            </div>
+            <div class="fila derecha">
+                    <span>Evaluación intermedia</span>
+                    <span class="badge info m-l-1em"> <img src="assets/file-text-mini.svg" alt=""> &nbsp; Pte.</span>
+            </div>
         </div>
     </div>
 </div>

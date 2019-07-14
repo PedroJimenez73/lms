@@ -296,7 +296,6 @@ function storeDataValue( name, value )
          }
       }
    }
-   console.log('Storeando valores')
    return;
 }
 

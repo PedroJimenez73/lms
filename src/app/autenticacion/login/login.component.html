@@ -2,10 +2,10 @@
     <div class="fila centrada">
         <img class="logo" src="../../../assets/logo-color.svg" alt="">
     </div>
-    <div class="columna">
+    <div class="fila">
         <input class="email" type="email" placeholder="Correo electrónico" formControlName="email" #email>
     </div>
-    <div class="columna">
+    <div class="fila">
         <input class="password" type="password" placeholder="Contraseña" formControlName="password">
     </div>
     <div class="fila derecha">
@@ -14,14 +14,4 @@
             <span *ngIf="waiting" style="display: flex;"><div class="spinner-white"></div> Espere...</span>
         </button>
     </div>
-    <div class="fila centrada">
-        <div class="message danger" *ngIf="errores">
-            <img src="assets/alert-triangle.svg">
-            {{errores}}
-        </div>
-    </div>
 </form>
-
-<div class="fila centrada">
-    <ng-content></ng-content>
-</div>

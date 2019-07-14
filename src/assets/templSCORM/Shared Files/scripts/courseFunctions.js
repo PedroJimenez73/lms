@@ -44,8 +44,7 @@ var sections = document.getElementsByTagName('section');
 var btnAnt = document.getElementById('btn-ant');
 var counter = document.getElementById('counter');
 var btnSig = document.getElementById('btn-sig');
-var porcentaje = 0;
-var diapos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+
 // Track initialized status so it is only called once
 var AlreadyInitialized = false;
 
@@ -152,7 +151,6 @@ function Initialize() {
 	if (entryMode == "resume") {
 		// check if a prior location was set
 		current = retrieveDataValue( "cmi.location" );
-
 		// get the Error code from the last call
 		var errorCode = retrieveLastErrorCode();
 
@@ -161,7 +159,8 @@ function Initialize() {
 			current = 0;
 		}
 	}
-	current = parseInt(current);
+
+	current = Number(current);
 	counter.innerHTML = (current + 1) + " / " + sections.length;
 	// present page to learner
 	// DisplayPage( location );
@@ -232,6 +231,7 @@ function SetIncomplete (){
 ** Return:  None
 **
 *******************************************************************************/
+
 function SetComplete (){
 	storeDataValue( "cmi.completion_status", "completed" );
 }
@@ -265,25 +265,6 @@ function SetComplete (){
 // 	// set location value for bookmark
 // 	storeDataValue( "cmi.location", pageNumber ) ;
 
-// 	var paginas = document.getElementsByTagName("section");
-
-// 	for ( var i = 0; i < paginas.length; i++ )	{
-// 		var pagina = paginas[i];
-// 		var id = pagina.id;
-
-// 		if ( id == "p" + pageNumber ){
-// 			// show requested page
-// 			pagina.style.classList.remove('oculta');
-// 			pagina.classList.add('actual');
-// 		}
-// 		else {
-// 			// hide other pages
-// 			pagina.style.classList.remove('actual');
-// 			pagina.style.classList.add('oculta');
-
-// 		}
-
-// 	}
 
 // 	// set completion status to completed when the user hits the last page
 // 	// check whether to display continue button at end of sco for navigation to next sco
@@ -405,27 +386,10 @@ function SetComplete (){
 
 
 function salir() {
-	console.log('Terminando')
+	storeDataValue( "cmi.location",current );
 	storeDataValue( "cmi.exit","suspend" );
 	Terminate();
 }
-// function aprobar() {
-// 	storeDataValue("cmi.success_status","passed" );
-// }
-// function suspender() {
-// 	storeDataValue("cmi.success_status","failed" );
-// }
-// function score() {
-// 	storeDataValue("cmi.score.min", '0');
-// 	storeDataValue("cmi.score.max", '100');
-// 	storeDataValue("cmi.score.raw", '60');  // blackboard
-// 	storeDataValue("cmi.score.scaled", '0.80');  // cloud.scorm
-// }
-
-// sections[0].classList.add('actual');
-// btnAnt.style.opacity = 0;
-// btnAnt.style.pointerEvents = 'none';
-
 
 function ant(){
 	if (current > 0){
@@ -436,7 +400,6 @@ function ant(){
 		sections[current].classList.add('actual');
 		counter.innerHTML = (current + 1) + " / " + sections.length;
 		actualizar();
-		seguimiento();
 		window.scrollTo(0,0);
 		storeDataValue( "cmi.location", current ) ;
 	}
@@ -451,7 +414,6 @@ function sig(){
 		sections[current].classList.add('actual');
 		counter.innerHTML = (current + 1) + " / " + sections.length;
 		actualizar();
-		seguimiento();
 		window.scrollTo(0,0);
 		storeDataValue( "cmi.location", current ) ;
 	}
@@ -467,7 +429,6 @@ function goTo(e) {
 		sections[current].classList.add('actual');
 		counter.innerHTML = (current + 1) + " / " + sections.length;
 		actualizar();
-		seguimiento();
 		window.scrollTo(0,0);
 		storeDataValue( "cmi.location", current ) ;
 }
@@ -487,63 +448,6 @@ function actualizar() {
 		btnSig.style.opacity = 1;
 		btnSig.style.pointerEvents = 'auto';
 	}
-	if ((current + 1) === 1) {
-			document.getElementById('titulo').innerHTML = "";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 2){
-			document.getElementById('titulo').innerHTML = "1 La clase: problemas y proyectos en interacción";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 3){
-			document.getElementById('titulo').innerHTML = "Presentación de la clase 1";
-			document.getElementById('subtitulo').innerHTML = "Objetivos";
-		} else if ((current + 1) === 4){
-			document.getElementById('titulo').innerHTML = "Presentación de la clase 1";
-			document.getElementById('subtitulo').innerHTML = "Mapa conceptual";
-		} else if ((current + 1) === 5){
-			document.getElementById('titulo').innerHTML = "Presentación de la clase 1";
-			document.getElementById('subtitulo').innerHTML = "Itinerario";
-		} else if ((current + 1) === 6){
-			document.getElementById('titulo').innerHTML = "1 La clase: problemas y proyectos en interacción";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 7 || (current + 1) === 8 || (current + 1) === 9 || (current + 1) === 10 || (current + 1) === 11 || (current + 1) === 12 || (current + 1) === 13 || (current + 1) === 14 ){
-			document.getElementById('titulo').innerHTML = "Lectura";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 15 || (current + 1) === 16 || (current + 1) === 17 || (current + 1) === 18 ){
-			document.getElementById('titulo').innerHTML = "Lectura";
-			document.getElementById('subtitulo').innerHTML = "Test de evaluación";
-		} else if ((current + 1) === 19 ){
-			document.getElementById('titulo').innerHTML = "1 La clase: problemas y proyectos en interacción";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 20 || (current + 1) === 21 ){
-			document.getElementById('titulo').innerHTML = "Diálogo con la lectura";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 22 ){
-			document.getElementById('titulo').innerHTML = "1 La clase: problemas y proyectos en interacción";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 23 ){
-			document.getElementById('titulo').innerHTML = "Ideas para compartir";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 24 ){
-			document.getElementById('titulo').innerHTML = "1 La clase: problemas y proyectos en interacción";
-			document.getElementById('subtitulo').innerHTML = "";
-		} else if ((current + 1) === 25 || (current + 1) === 26){
-			document.getElementById('titulo').innerHTML = "Construyendo el portfolio";
-			document.getElementById('subtitulo').innerHTML = "";
-		}
-}
-
-function seguimiento () {
-
-	diapos.forEach(function(item, index, object) {
-		if (item === current) {
-			object.splice(index, 1);
-		}
-	});
-
-	porcentaje = ( 25 - diapos.length ) / 25 * 100
 	
-	document.getElementById('seguimiento').style.width = porcentaje + "%";
-	document.getElementById('evol').style.width = porcentaje + "%";
-	document.getElementById('texto-porcentaje').innerHTML = Math.round(porcentaje) + " % Completado";
 }
 

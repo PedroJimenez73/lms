@@ -14,8 +14,8 @@ export class LandingComponent implements OnInit {
   subscripLogin: Subscription;
   subscripBienvenida: Subscription;
   isLogged = false;
-  welcomeMessage = false;
   nombre: string;
+  bienvenida: string;
   modalOn = false;
   showOverlay = false;
 
@@ -37,12 +37,7 @@ export class LandingComponent implements OnInit {
                                                   if(data){
                                                     const nombrePila = data;
                                                     this.nombre = nombrePila.substring(0, nombrePila.indexOf(" "));
-                                                    this.welcomeMessage = true;
-                                                    setTimeout(() => {
-                                                      this.welcomeMessage = false;
-                                                    }, 3000)
-                                                  } else {
-                                                    this.welcomeMessage = false;
+                                                    this.bienvenida = `¡Bienvenid@ de nuevo ${this.nombre}!`
                                                   }
                                                 },
                                                 (error:any) => {console.log(error)

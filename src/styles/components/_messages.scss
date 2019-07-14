@@ -1,0 +1,24 @@
+.message {
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    color: $gris-oscuro;
+    background-color: #ffffff;
+    @include flex(row, flex-start, center);
+
+    img {
+        margin-right: 0.5em;
+    }
+
+    &.success {
+        border: 1px solid $verde;
+    }
+    
+    &.warning {
+        border: 1px solid $amarillo;
+    }
+    
+    &.danger {
+        border: 1px solid $rojo;
+    }
+
+}
