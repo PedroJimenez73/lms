@@ -1,0 +1,25 @@
+<div class="contenedor fondo-gris">
+    <app-friso></app-friso>
+    <div class="contenido para-friso flex">
+        <div class="card jumbo">
+            <header>
+                <h2>Usuarios</h2>
+                <button routerLink="/panel/crear-usuario">Añadir usuario</button>
+            </header>
+            <hr>
+            <div class="fila space check" *ngFor="let usuario of usuarios; let i = index;">
+                <div>
+                    <img src="user.svg" class="m-r-1em">{{usuario.nombre}}
+                </div>
+                <div>
+                    <img src="mail.svg" class="m-r-1em">{{usuario.email}}
+                </div>
+                <div>
+                    <button class="inline">Seguimiento</button>
+                    <button class="m-l-1em">Editar</button>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
-  // urlLogin: 'http://localhost:443/login',
-  // urlUsuario: 'http://localhost:443/usuario',
-  urlLogin: 'https://tranquil-capitol-reef-26816.herokuapp.com:443/login',
-  urlUsuario: 'https://tranquil-capitol-reef-26816.herokuapp.com/usuario',
+  urlLogin: 'http://localhost:443/login',
+  urlUsuario: 'http://localhost:443/usuario',
+  urlCurso: 'http://localhost:443/curso',
+  // urlCurso: 'https://tranquil-capitol-reef-26816.herokuapp.com:443/curso',
+  // urlLogin: 'https://tranquil-capitol-reef-26816.herokuapp.com:443/login',
+  // urlUsuario: 'https://tranquil-capitol-reef-26816.herokuapp.com/usuario',
 };
 
 /*

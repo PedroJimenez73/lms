@@ -9,7 +9,7 @@ input {
     background-repeat: no-repeat;
     background-position: 10px 14px;
     background-size: 20px 20px;
-    padding: .8em 1em .8em 2.5em;
+    padding: 0.8em 1em 0.8em 1em;
     width: 100%;
 }
 
@@ -19,17 +19,23 @@ input::placeholder {
 }
 
 input.user {
+    padding: .8em 1em .8em 2.5em;
     background-image: url('../assets/user.svg');
 }
 
 input.email {
+    padding: .8em 1em .8em 2.5em;
     background-image: url('../assets/mail.svg');
 }
 
 input.password {
+    padding: .8em 1em .8em 2.5em;
     background-image: url('../assets/unlock.svg');
 }
 
 input:focus {
     outline: none;
+}
+label {
+    margin-bottom: 0.5em;
 }

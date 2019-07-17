@@ -70,6 +70,16 @@
                 <button (click)="toggleOverlay()">Acceder</button>
             </div>
         </div>
+        <div class="card">
+            <div class="fila space">
+                <h2>Administración LMS</h2>
+            </div>
+            <hr>
+            <img src="assets/settings.svg" class="icon-big">
+            <div class="fila derecha">
+                <button routerLink="/panel">Acceder</button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="overlay" (click)="toggleOverlay()" *ngIf="showOverlay">

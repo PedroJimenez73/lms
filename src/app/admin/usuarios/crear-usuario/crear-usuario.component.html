@@ -1,0 +1,46 @@
+<div class="contenedor fondo-gris">
+    <app-friso></app-friso>
+    <div class="contenido para-friso flex-center">
+        <div class="card form">
+            <header>
+                <h2>Crear nuevo Usuario</h2>
+                <button class="inline" routerLink="/panel/usuarios">Volver</button>
+            </header>
+            <hr>
+            <form [formGroup]="registroForm" (ngSubmit)="registroUsuario()">
+                <div class="fila">
+                    <div class="col-50">
+                        <label>Nombre y apellidos</label>
+                        <input class="user" type="text" formControlName="nombre" #nombre>
+                    </div>
+                    <div class="col-50">
+                        <label>Correo electrónico</label>
+                        <input class="email" type="text" formControlName="email">
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="col-33">
+                        <label>Rol</label>
+                        <input type="text" formControlName="rol">
+                    </div>
+                    <div class="col-33">
+                        <label>Contraseña</label>
+                        <input class="password" type="password" formControlName="password">
+                    </div>
+                    <div class="col-33">
+                        <label>Repita la contraseña</label>
+                        <input class="password" type="password" formControlName="confirm">
+                    </div>
+                </div>
+                <hr>
+                <div class="fila derecha">
+                    <button class="inline" routerLink="/panel/usuarios">Cancelar</button>
+                    <button type="submit" class="m-l-1em" [disabled]="registroForm.invalid || registroForm.value.password != registroForm.value.confirm">
+                        <span *ngIf="!waiting">Añadir usuario</span>
+                        <span *ngIf="waiting" style="display: flex;"><div class="spinner-white"></div> Espere...</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

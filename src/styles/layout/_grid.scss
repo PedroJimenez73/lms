@@ -20,6 +20,10 @@
         @include flex(row, flex-start, stretch);
     }
 
+    &.flex-center {
+        @include flex(row, center, stretch);
+    }
+
     &.grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -55,9 +59,52 @@
     align-items: center; 
 }
 
-.columna {
+.col-100 {
     display: flex;
     flex-direction: column;
+    margin: 0 0.5em;
+}
+
+.col-80 {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 0.5em;
+}
+
+.col-66 {
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+    margin: 0 0.5em;
+}
+
+.col-50 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 0.5em;
+}
+
+.col-40 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 0.5em;
+}
+
+.col-33 {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    margin: 0 0.5em;
+}
+
+.col-20 {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 0 0.5em;
 }
 
 .m-t-1em {
@@ -67,9 +114,11 @@
 .m-r-1em {
     margin-right: 1em;
 }
+
 .m-b-1em {
     margin-bottom: 1em;
 }
+
 .m-l-1em {
     margin-left: 1em;
 }

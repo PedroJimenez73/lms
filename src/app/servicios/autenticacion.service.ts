@@ -78,14 +78,14 @@ export class AutenticacionService {
     }
   }
 
-  // getUsuarios() {
-  //   const url = this.urlUsuario + '/' + '?token=' + this.token;
-  //   return this.http.get(url).pipe(
-  //     map( (res: any) => {
-  //       return res;
-  //     })
-  //   );
-  // }
+  getUsuarios() {
+    const url = this.urlUsuario + '/' + '?token=' + this.token;
+    return this.http.get(url).pipe(
+      map( (res: any) => {
+        return res;
+      })
+    );
+  }
 
   // getUsuarioId(id) {
   //   const url = this.urlUsuario + '/' + id + '?token=' + this.token;

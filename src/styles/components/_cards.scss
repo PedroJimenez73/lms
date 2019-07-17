@@ -7,7 +7,8 @@
     position: relative;
 
     header {
-        padding-right: 10px;
+        padding: 0 1em;
+        @include flex(row, space-between, center);
     }
 
     & > img {
@@ -32,11 +33,12 @@
 
 .card.list {
 
-    h2 {
-        padding: 1em;
-    }
-
+    
     width: calc(60% - 40px);
+    
+    h2 {
+        padding: 1em 0;
+    }
 
     hr {
         margin: 0;
@@ -97,7 +99,7 @@
     width: calc(40% - 40px);
 
     h2 {
-        padding: 1em;
+        padding: 1em 0;
     }
 
     hr {
@@ -113,11 +115,72 @@
 .card.jumbo {
 
     width: calc(100% - 40px);
-    min-height: 660px;
+
+    h2 {
+        padding: 1em 0;
+    }
+
+    hr {
+        margin: 0;
+    } 
+
+    .fila {
+        margin: 0;
+        padding: 1em;
+        transition: background-color 400ms ease-in-out;
+
+        div {
+            display: flex;
+            align-items: center;
+
+            span {
+                border: 1px solid $gris-oscuro;
+                height: 30px;
+                width: 30px;
+                min-width: 30px;
+                border-radius: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+            span.check {
+                color: white;
+                background-color: $verde;
+            }
+        }
+        
+        div.eval {
+            color: $azul;
+        }
+
+    }
+
+    .fila:hover {
+        cursor: pointer;
+        background-color: $gris-claro;
+    }
+
+    .fila div.eval span {
+        border: 1px solid $azul;
+    }
+
+    .fila.check div span {
+        border: 1px solid $verde;
+        color: white;
+        background-color: $verde;
+    }
+
+}
+
+.card.form {
+
+    width: calc(80% - 40px);
     position: relative;
 
     h2 {
-        padding: 1em;
+        padding: 1em 0;
     }
 
     .fila.space {

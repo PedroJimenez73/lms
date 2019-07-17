@@ -1,40 +1,19 @@
 <div class="contenedor fondo-gris">
     <app-friso></app-friso>
     <div class="contenido para-friso grid">
-        <div class="card">
+        <div class="card" *ngFor="let curso of cursos">
             <div class="fila space">
-                <h2>Business Intelligence con Tableu Software</h2>
+                <h2>{{curso.titulo}}</h2>
                 <img src="assets/unlock-big.svg">
             </div>
             <hr>
-            <img src="assets/tableau.svg" alt="">
+            <img [src]="curso.imagen" alt="">
             <div class="fila space">
                 <span class="badge warning"> <img src="assets/calendar.svg">&nbsp;31/10/19</span>
                 <span class="badge success">67 %</span>
                 <button routerLink="/cursos/tableau">Continuar</button>
             </div>
         </div>
-        <div class="card">
-            <div class="fila space">
-                <h2>Metodologías desarrollo Ágil con SCRUM</h2>
-                <img src="../../../assets/lock.svg">
-            </div>
-            <hr>
-            <img src="assets/scrum.svg" alt="">
-            <div class="fila derecha">
-                <button>Comenzar</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="fila space">
-                <h2>Gestión de equipos con Microsoft Teams</h2>
-                <img src="assets/lock.svg">
-            </div>
-            <hr>
-            <img src="assets/teams.svg" alt="">
-            <div class="fila derecha">
-                <button>Comenzar</button>
-            </div>
-        </div>
+        
     </div>
 </div>

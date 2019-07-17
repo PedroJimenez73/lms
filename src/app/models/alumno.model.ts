@@ -21,3 +21,19 @@ class Alumno {
         }
     ]
 }
+
+class Curso {
+    _id: {};
+    codigo: string;
+    titulo: string;
+    tutor: string;
+    categoria: string;
+    fechaInicio: object;
+    fechaFinalizacion: object;
+    horas: number;
+    imagen: string;
+    unidades: {
+        titulo: string;
+        urlScorm: string;
+    }
+}

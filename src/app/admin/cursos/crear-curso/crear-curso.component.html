@@ -1,0 +1,68 @@
+<div class="contenedor fondo-gris">
+    <app-friso></app-friso>
+    <div class="contenido para-friso flex-center">
+        <div class="card form">
+            <header>
+                <h2>Crear nuevo Curso</h2>
+                <button class="inline" routerLink="/panel/cursos">Volver</button>
+            </header>
+            <hr>
+            <form [formGroup]="cursoForm" (ngSubmit)="onSubmit()">
+                <div class="fila">
+                    <div class="col-20">
+                        <label>Código</label>
+                        <input type="text" formControlName="codigo" #codigo>
+                    </div>
+                    <div class="col-80">
+                        <label>Título</label>
+                        <input type="text" formControlName="titulo">
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="col-20">
+                        <label>Categoría</label>
+                        <input type="text" formControlName="categoria">
+                    </div>
+                    <div class="col-80">
+                        <label>Autor</label>
+                        <input type="text" formControlName="autor">
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="col-33">
+                        <label>Nº horas</label>
+                        <input type="text" formControlName="horas">
+                    </div>
+                    <div class="col-33">
+                        <label>Fecha inicio</label>
+                        <input type="date" formControlName="fechaInicio">
+                    </div>
+                    <div class="col-33">
+                        <label>Fecha finalización</label>
+                        <input type="date" formControlName="fechaFinalizacion">
+                    </div>
+                </div>
+                <hr>
+                <header class="fila derecha">
+                    <h2>Unidades</h2>
+                    <!-- <button>Añadir</button> -->
+                </header>
+                <hr>
+                <div class="fila">
+                    <div class="col-100">
+                        <label>Unidad</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <hr>
+                <div class="fila derecha">
+                    <button class="inline" routerLink="/panel/cursos">Cancelar</button>
+                    <button class="m-l-1em" type="submit" [disabled]="cursoForm.invalid">
+                        <span *ngIf="!waiting">Añadir curso</span>
+                        <span *ngIf="waiting" style="display: flex;"><div class="spinner-white"></div> Espere...</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
